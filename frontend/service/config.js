@@ -5,14 +5,15 @@ import https from 'https';
 // used in axios plugin
 export default {
   // baseURL: 'http://localhost:8080/SWE306_FinalProejct_Backend_war_exploded',
-  proxy: true,
+  // CLOUD DEPLOYMENT NO PROXY
+  proxy: false,
   baseURL: '/api',
   headers: {
     common: {
-      Accept: 'text/plain, */*'
+      Accept: 'text/plain, */*',
     },
     'X-Requested-With': 'XMLHttpRequest',
-    'X-Agent': 'swe301/Web'
+    'X-Agent': 'swe301/Web',
   },
   timeout: 5000,
   // cors with credentials
@@ -24,12 +25,12 @@ export default {
   xsrfHeaderName: 'X-XSRF-TOKEN',
   // nodejs
   httpAgent: new http.Agent({
-    keepAlive: true
+    keepAlive: true,
   }),
   httpsAgent: new https.Agent({
-    keepAlive: true
+    keepAlive: true,
   }),
   retry: {
-    retries: 3
-  }
+    retries: 3,
+  },
 };
