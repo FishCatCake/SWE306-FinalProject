@@ -5,7 +5,7 @@
       Welcom to XMUM Discussion Room Reservation System
     </CustomPageTitle>
     <el-card class='box-card'>
-<!--      <div slot='header' class='clearfix'>-->
+      <!--      <div slot='header' class='clearfix'>-->
       <!--        <span style='font-size: 25px'> </span>-->
       <!--      </div>-->
       <img src='~/assets/images/xmum.jpeg' class='card_image'>
@@ -47,17 +47,17 @@ export default {
           desc: ''
         },
         {
-          id:2,
+          id: 2,
           url: '2.jpeg',
           desc: ''
         },
         {
-          id  :3,
+          id: 3,
           url: '3.jpeg',
           desc: ''
         },
         {
-          id:4,
+          id: 4,
           url: '4.png',
           desc: ''
         }
@@ -73,7 +73,21 @@ export default {
     ...mapGetters(['isAuthenticated', 'loggedInUser']),
     ...mapGetters('locale', ['availableLocales'])
   },
+  mounted() {
+    this.demoMessage();
+  },
   methods: {
+    demoMessage() {
+      this.$notify({
+          title: 'Demo Mode',
+          message: 'This is the demo for SWE306 Final Project by Group 6. Some functions are restricted in demo mode.' +
+            '<p>Check our <a class="underline" href="https://github.com/FishCatCake/SWE306_FinalProject" target="_blank">GitHub Repository</a> for more details</p>',
+          type: 'warning',
+          dangerouslyUseHTMLString: true,
+          duration: 0
+        }
+      );
+    },
     getRoomList() {
       this.$store.dispatch('room/fetchRoomList');
       console.log(this.roomList);

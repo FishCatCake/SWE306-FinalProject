@@ -97,29 +97,12 @@ export default {
     handleAddUser() {
       this.$router.push('/admin/user/add');
     },
-    async handleDelete(index, row) {
-      await Element.MessageBox.confirm(
-        `Are you sure to delete user ${row.username} ?`,
-        'Attention',
+    handleDelete(index, row) {
+      Element.MessageBox.alert(
+        'You cannot delete user in demo mode',
+        'Warning',
         {
-          type: 'warning',
-          confirmButtonText: 'Yes',
-          cancelButtonText: 'No'
-        }
-      )
-        .then(async () => {
-          const resp = await this.$api.$post('/deleteUser', {
-            userId: row.userId
-          });
-          if (resp.success) {
-            Element.Message.success(resp.message);
-            // await this.$router.push('/admin/user');
-            window.location.reload();
-          } else {
-            Element.Message.error(resp.message);
-          }
-        })
-        .catch(() => {
+          type: 'warning'
         });
     }
 

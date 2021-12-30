@@ -3,7 +3,7 @@
 
     <el-form ref='form' :model='user' class='editor-form' label-width='100px'>
       <el-form-item label='Username'>
-        <el-input v-model='user.username'></el-input>
+        <el-input v-model='user.username' disabled></el-input>
       </el-form-item>
       <el-form-item label='First Name'>
         <el-input v-model='user.firstName'></el-input>
@@ -12,7 +12,7 @@
         <el-input v-model='user.lastName'></el-input>
       </el-form-item>
       <el-form-item label='Password'>
-        <el-input v-model='user.password' show-password></el-input>
+        <el-input v-model='user.password' show-password disabled></el-input>
       </el-form-item>
       <el-form-item label='Tel.'>
         <el-input v-model='user.phoneNum'></el-input>
@@ -24,13 +24,14 @@
         </el-radio-group>
       </el-form-item>
       <el-form-item>
-        <el-button type='primary' @click='handleSubmit(user)'>Submit</el-button>
+        <el-button type='primary' :disabled='disabled' @click='handleSubmit(user)'>Submit</el-button>
       </el-form-item>
     </el-form>
   </div>
 </template>
 
 <script>
+
 export default {
   name: 'UserEditor',
   props: {
@@ -43,6 +44,10 @@ export default {
     userId: {
       type: Number,
       required: false
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     }
   },
   data() {

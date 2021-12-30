@@ -1,7 +1,15 @@
 <template>
   <div>
     <CustomPageTitle>Add New User</CustomPageTitle>
-    <UserEditor method='add'/>
+    <div class='mb-5'>
+      <el-alert
+        type='warning'
+        title='Demo Mode'
+        show-icon>
+        You cannot add new user in demo mode.
+      </el-alert>
+    </div>
+    <UserEditor method='add' disabled />
 
   </div>
 </template>
@@ -9,7 +17,7 @@
 <script>
 export default {
   name: 'add user',
-  middleware: ['adminAuth'],
+  middleware: ['adminAuth']
 
 };
 </script>
