@@ -25,8 +25,9 @@ export default {
 .main-container {
   @apply sm:px-0;
   @apply md:px-14;
-  @apply xl:px-32;
-  @apply 2xl:px-48;
+  @apply lg:px-8;
+  @apply xl:px-24;
+  @apply 2xl:px-28;
 }
 
 .main-body {

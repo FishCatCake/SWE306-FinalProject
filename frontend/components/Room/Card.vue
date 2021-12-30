@@ -22,7 +22,6 @@
             Room Name
           </template>
           {{ room.roomName }}
-
         </el-descriptions-item>
         <el-descriptions-item>
           <template slot='label'>

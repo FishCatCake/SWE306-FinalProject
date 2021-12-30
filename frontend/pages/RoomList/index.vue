@@ -45,8 +45,17 @@ export default {
 
 .room-card-item {
   @apply mb-1.5;
+  @apply w-full;
+
   @apply md:mb-3.5;
-  @apply md:mr-3.5;
-  @apply w-96;
+  @apply md:w-full;
+
+  @apply lg:w-72;
+  @apply lg:mr-3.5;
+
+  @apply xl:mb-6;
+  @apply xl:mr-6;
+  @apply xl:w-96;
+
 }
 </style>
