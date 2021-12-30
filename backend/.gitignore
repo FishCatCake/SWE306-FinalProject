@@ -35,3 +35,7 @@ build/
 
 ### logs ###
 log/*
+
+
+### out ###
+out/*
